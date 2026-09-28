@@ -1,0 +1,1251 @@
+{
+  "summary": {
+    "total_requests": 12,
+    "success_count": 12,
+    "success_rate": 1.0,
+    "avg_latency_s": 11.11,
+    "agent_call_distribution": {
+      "document_agent": 4,
+      "reading_agent": 3,
+      "multimodal_agent": 3,
+      "profile_agent": 2,
+      "path_agent": 2,
+      "question_agent": 2,
+      "code_agent": 2,
+      "tutor_agent": 1,
+      "assessment_agent": 1
+    },
+    "intent_metrics": {
+      "recall_avg": 0.972,
+      "precision_avg": 0.944,
+      "f1_avg": 0.942,
+      "top_missed": [
+        [
+          "multimodal_agent",
+          1
+        ]
+      ],
+      "top_extra": [
+        [
+          "document_agent",
+          1
+        ],
+        [
+          "multimodal_agent",
+          1
+        ]
+      ]
+    },
+    "quality": {
+      "avg_score": 0.828,
+      "avg_structure": 0.675,
+      "avg_length": 0.859,
+      "avg_coverage": 1.0
+    },
+    "diversity": {},
+    "judge_enabled": false
+  },
+  "records": [
+    {
+      "meta": {
+        "scenario_id": "sim_user_000-s0",
+        "scenario": "学习规划",
+        "knowledge_point": "归并排序",
+        "expected_agents": [
+          "path_agent",
+          "profile_agent"
+        ],
+        "profile": {
+          "major": "非计算机",
+          "level": "中级",
+          "style": "视觉型",
+          "goal": "面试算法"
+        },
+        "style": "视觉型"
+      },
+      "result": {
+        "ok": true,
+        "reply": "好的，很高兴能帮你规划归并排序的学习路径！归并排序是面试中非常核心的算法，掌握它不仅能应对手写代码题，更能帮你理解“分治”思想。\n\n由于你是新用户，我先帮你把学习框架搭起来。针对**面试算法**这个目标，我为你规划了以下四步走的学习路径：\n\n1.  **理解核心思想（分治与合并）**：这是地基。你需要彻底搞懂“分解”和“合并”两个过程，尤其是合并两个有序数组的`merge`函数，它是整个算法的灵魂。\n2.  **掌握代码实现（递归与迭代）**：面试中通常考察递归写法。你需要能熟练、无Bug地写出`mergeSort`函数，并理解递归调用栈的压栈和出栈过程。建议先背熟模板，再理解细节。\n3.  **分析复杂度（时间与空间）**：面试必问。你需要能清晰说出时间复杂度是O(n log n)（无论最好、最坏还是平均），空间复杂度是O(n)（因为需要临时数组）。这能体现你的理论基础。\n4.  **实战应用与变形**：这是拉开差距的地方。归并排序的经典应用是**求逆序对**（剑指Offer原题），以及解决**链表排序**（LeetCode 148题）。掌握这些能让你在面试中脱颖而出。\n\n---\n\n我已经根据这个路径为你生成了**一份详细的学习路径图（包含每个阶段的具体知识点和练习建议）**，**点击右侧面板查看**，可以把它作为你的学习清单。\n\n---\n\n**关于下一步的建议：**\n\n建议你先从**第一步“理解核心思想”**开始，重点攻克`merge`函数的写法。如果你觉得递归理解起来有困难，可以先从**迭代（自底向上）**版本入手，或者画图模拟递归过程。\n\n等你把基础路径看完，我们可以针对**“求逆序对”**这个高频考点进行专项练习，这是归并排序在面试中最常见的变形题。\n\n**你可以先看看右侧的学习路径图，如果有任何不理解的地方，随时告诉我，我们一步步来。** 祝你学习顺利！",
+        "agent_calls": [
+          "profile_agent",
+          "path_agent"
+        ],
+        "dag": {
+          "nodes": [
+            {
+              "id": "user_input",
+              "label": "用户输入",
+              "type": "input"
+            },
+            {
+              "id": "profile_agent",
+              "label": "画像构建",
+              "type": "agent",
+              "agent": "profile_agent"
+            },
+            {
+              "id": "path_agent",
+              "label": "路径规划",
+              "type": "agent",
+              "agent": "path_agent"
+            },
+            {
+              "id": "integrate",
+              "label": "整合回复",
+              "type": "output"
+            }
+          ],
+          "edges": [
+            {
+              "source": "user_input",
+              "target": "profile_agent"
+            },
+            {
+              "source": "profile_agent",
+              "target": "path_agent"
+            },
+            {
+              "source": "profile_agent",
+              "target": "integrate"
+            },
+            {
+              "source": "path_agent",
+              "target": "integrate"
+            }
+          ]
+        },
+        "status_bar": [
+          {
+            "agent": "profile_agent",
+            "status": "running",
+            "message": "画像构建 执行中..."
+          },
+          {
+            "agent": "profile_agent",
+            "status": "completed",
+            "message": "画像构建 已完成"
+          },
+          {
+            "agent": "path_agent",
+            "status": "running",
+            "message": "路径规划 执行中..."
+          },
+          {
+            "agent": "path_agent",
+            "status": "completed",
+            "message": "路径规划 已完成"
+          }
+        ],
+        "latency_s": 9.75,
+        "error": ""
+      },
+      "intent": {
+        "recall": 1.0,
+        "precision": 1.0,
+        "f1": 1.0,
+        "missed": [],
+        "extra": []
+      },
+      "quality": {
+        "score": 0.879,
+        "structure": 0.7,
+        "length": 0.995,
+        "coverage": 1.0,
+        "llm_score": null
+      }
+    },
+    {
+      "meta": {
+        "scenario_id": "sim_user_000-s1",
+        "scenario": "综合学习",
+        "knowledge_point": "二分查找",
+        "expected_agents": [
+          "document_agent",
+          "question_agent",
+          "multimodal_agent"
+        ],
+        "profile": {
+          "major": "非计算机",
+          "level": "中级",
+          "style": "视觉型",
+          "goal": "面试算法"
+        },
+        "style": "视觉型"
+      },
+      "result": {
+        "ok": true,
+        "reply": "好的！我来帮你讲解二分查找，并生成配套的练习题。\n\n---\n\n## 🔍 二分查找（Binary Search）\n\n### 核心思想\n二分查找是一种在**有序数组**中查找目标值的高效算法。它每次将搜索范围缩小一半，因此时间复杂度为 **O(log n)**，远优于线性查找的 O(n)。\n\n### 基本步骤\n1. 初始化左指针 `left = 0`，右指针 `right = 数组长度 - 1`\n2. 当 `left <= right` 时循环：\n   - 计算中间位置 `mid = (left + right) / 2`（注意防溢出）\n   - 如果 `arr[mid] == target`，返回 `mid`\n   - 如果 `arr[mid] < target`，说明目标在右半部分，`left = mid + 1`\n   - 如果 `arr[mid] > target`，说明目标在左半部分，`right = mid - 1`\n3. 循环结束仍未找到，返回 `-1`\n\n### 代码模板（Python）\n```python\ndef binary_search(arr, target):\n    left, right = 0, len(arr) - 1\n    while left <= right:\n        mid = (left + right) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1\n```\n\n### 关键点\n- ✅ **前提条件**：数组必须有序（升序或降序）\n- ✅ **边界处理**：`while left <= right` 保证不遗漏\n- ✅ **整数溢出**：在C++/Java中建议用 `mid = left + (right - left) / 2`\n\n---\n\n## 📝 练习题\n\n我已为你生成了 **3道练习题**（包含基础、进阶和变种题型），点击右侧面板查看并作答。题目会覆盖：\n- 标准二分查找\n- 查找第一个/最后一个等于目标值的位置\n- 旋转排序数组中的查找\n\n---\n\n### 💡 下一步建议\n如果你对二分查找的基本概念已经清晰，可以尝试：\n1. 练习**变种问题**（如查找插入位置、寻找峰值）\n2. 学习**二分答案**思想（在值域上二分，解决\"最小化最大值\"类问题）\n\n有任何不懂的地方，随时告诉我！😊\n\n有0道题答错了，还需要多练习。要我再讲解一下吗？",
+        "agent_calls": [
+          "document_agent",
+          "question_agent"
+        ],
+        "dag": {
+          "nodes": [
+            {
+              "id": "user_input",
+              "label": "用户输入",
+              "type": "input"
+            },
+            {
+              "id": "document_agent",
+              "label": "文档生成",
+              "type": "agent",
+              "agent": "document_agent"
+            },
+            {
+              "id": "question_agent",
+              "label": "题库生成",
+              "type": "agent",
+              "agent": "question_agent"
+            },
+            {
+              "id": "integrate",
+              "label": "整合回复",
+              "type": "output"
+            }
+          ],
+          "edges": [
+            {
+              "source": "user_input",
+              "target": "document_agent"
+            },
+            {
+              "source": "user_input",
+              "target": "question_agent"
+            },
+            {
+              "source": "document_agent",
+              "target": "integrate"
+            },
+            {
+              "source": "question_agent",
+              "target": "integrate"
+            }
+          ]
+        },
+        "status_bar": [
+          {
+            "agent": "document_agent",
+            "status": "running",
+            "message": "文档生成 执行中..."
+          },
+          {
+            "agent": "question_agent",
+            "status": "running",
+            "message": "题库生成 执行中..."
+          },
+          {
+            "agent": "document_agent",
+            "status": "completed",
+            "message": "文档生成 已完成"
+          },
+          {
+            "agent": "question_agent",
+            "status": "completed",
+            "message": "题库生成 已完成"
+          }
+        ],
+        "latency_s": 14.32,
+        "error": ""
+      },
+      "intent": {
+        "recall": 0.667,
+        "precision": 1.0,
+        "f1": 0.8,
+        "missed": [
+          "multimodal_agent"
+        ],
+        "extra": []
+      },
+      "quality": {
+        "score": 1.0,
+        "structure": 1.0,
+        "length": 1.0,
+        "coverage": 1.0,
+        "llm_score": null
+      }
+    },
+    {
+      "meta": {
+        "scenario_id": "sim_user_000-s2",
+        "scenario": "拓展阅读",
+        "knowledge_point": "栈",
+        "expected_agents": [
+          "reading_agent"
+        ],
+        "profile": {
+          "major": "非计算机",
+          "level": "中级",
+          "style": "视觉型",
+          "goal": "面试算法"
+        },
+        "style": "视觉型"
+      },
+      "result": {
+        "ok": true,
+        "reply": "关于栈的学习，除了课本上的基础内容，确实有很多值得深入阅读的资料。不过，刚才我在为你整理**拓展阅读**资料时遇到了一点技术问题，暂时没能生成完整的推荐清单。\n\n别担心，这个问题不影响你继续学习。为了不耽误你的时间，我先直接给你一些**经典的学习建议**：\n\n- **入门巩固**：如果你刚接触栈，建议先吃透教材中关于“后进先出（LIFO）”的图解部分，并亲手用数组或链表实现一次栈的基本操作（入栈、出栈、取栈顶）。\n- **经典书籍**：如果学有余力，**《算法（第4版）》**（Sedgewick著）和**《数据结构与算法分析》**（Mark Allen Weiss著）中关于栈的应用（如表达式求值、括号匹配）讲得非常透彻，适合作为拓展读物。\n\n---\n\n📌 **关于刚才的技术小插曲**：我已经记录下这个问题，下次为你生成资料时会自动重试。如果你现在特别需要一份**书单或文章列表**，可以点击右侧的“拓展阅读”按钮重新触发一次，或者告诉我你目前学到哪个章节（比如“栈的应用”还是“递归与栈”），我可以为你提供更精准的推荐。\n\n接下来，你想先看看**栈在算法题中的典型应用**，还是**继续学习下一个数据结构**（如队列）？",
+        "agent_calls": [
+          "reading_agent"
+        ],
+        "dag": {
+          "nodes": [
+            {
+              "id": "user_input",
+              "label": "用户输入",
+              "type": "input"
+            },
+            {
+              "id": "reading_agent",
+              "label": "拓展阅读",
+              "type": "agent",
+              "agent": "reading_agent"
+            },
+            {
+              "id": "integrate",
+              "label": "整合回复",
+              "type": "output"
+            }
+          ],
+          "edges": [
+            {
+              "source": "user_input",
+              "target": "reading_agent"
+            },
+            {
+              "source": "reading_agent",
+              "target": "integrate"
+            }
+          ]
+        },
+        "status_bar": [
+          {
+            "agent": "reading_agent",
+            "status": "running",
+            "message": "拓展阅读 执行中..."
+          },
+          {
+            "agent": "reading_agent",
+            "status": "completed",
+            "message": "拓展阅读 已完成"
+          }
+        ],
+        "latency_s": 7.21,
+        "error": ""
+      },
+      "intent": {
+        "recall": 1.0,
+        "precision": 1.0,
+        "f1": 1.0,
+        "missed": [],
+        "extra": []
+      },
+      "quality": {
+        "score": 0.613,
+        "structure": 0.3,
+        "length": 0.644,
+        "coverage": 1.0,
+        "llm_score": null
+      }
+    },
+    {
+      "meta": {
+        "scenario_id": "sim_user_001-s0",
+        "scenario": "代码实操",
+        "knowledge_point": "数组",
+        "expected_agents": [
+          "code_agent"
+        ],
+        "profile": {
+          "major": "信息管理",
+          "level": "高级",
+          "style": "实践型",
+          "goal": "考研"
+        },
+        "style": "实践型"
+      },
+      "result": {
+        "ok": true,
+        "reply": "好的，我来帮你生成一个关于数组的可运行代码示例。\n\n不过刚才在生成代码模板时遇到了一点小问题（系统内部错误），我重新为你生成一下。\n\n---\n\n### 📚 数组基础示例（Python）\n\n```python\n# 数组（列表）的基本操作示例\n\n# 1. 创建数组\nfruits = [\"苹果\", \"香蕉\", \"橙子\"]\nnumbers = [1, 2, 3, 4, 5]\nmixed = [1, \"hello\", 3.14, True]\n\nprint(\"=== 数组创建 ===\")\nprint(f\"水果列表: {fruits}\")\nprint(f\"数字列表: {numbers}\")\nprint(f\"混合列表: {mixed}\")\n\n# 2. 访问元素（索引从0开始）\nprint(\"\\n=== 访问元素 ===\")\nprint(f\"第一个水果: {fruits[0]}\")\nprint(f\"最后一个水果: {fruits[-1]}\")\nprint(f\"数字列表前3个: {numbers[0:3]}\")\n\n# 3. 修改元素\nprint(\"\\n=== 修改元素 ===\")\nfruits[1] = \"葡萄\"\nprint(f\"修改后: {fruits}\")\n\n# 4. 添加元素\nprint(\"\\n=== 添加元素 ===\")\nfruits.append(\"西瓜\")  # 末尾添加\nfruits.insert(1, \"草莓\")  # 指定位置插入\nprint(f\"添加后: {fruits}\")\n\n# 5. 删除元素\nprint(\"\\n=== 删除元素 ===\")\nfruits.remove(\"苹果\")  # 按值删除\npopped = fruits.pop()  # 弹出最后一个\nprint(f\"删除后: {fruits}\")\nprint(f\"弹出的元素: {popped}\")\n\n# 6. 遍历数组\nprint(\"\\n=== 遍历数组 ===\")\nfor i, fruit in enumerate(fruits):\n    print(f\"第{i+1}个: {fruit}\")\n\n# 7. 数组常用操作\nprint(\"\\n=== 常用操作 ===\")\nprint(f\"数组长度: {len(fruits)}\")\nprint(f\"排序: {sorted(numbers, reverse=True)}\")\nprint(f\"求和: {sum(numbers)}\")\nprint(f\"最大值: {max(numbers)}\")\n```\n\n---\n\n### 🚀 运行方式\n\n1. 复制上面的代码\n2. 保存为 `array_demo.py` 文件\n3. 在终端运行：`python array_demo.py`\n\n---\n\n### 💡 学习建议\n\n这个示例涵盖了数组（列表）最常用的操作。如果你想进一步学习，可以尝试：\n\n- **二维数组**（矩阵）的操作\n- 用数组实现**栈**或**队列**数据结构\n- 数组的**排序算法**（冒泡排序、快速排序等）\n\n---\n\n需要我把这个代码模板保存到右侧面板方便你直接使用吗？或者你想深入某个具体操作，我可以再详细讲解。",
+        "agent_calls": [
+          "code_agent"
+        ],
+        "dag": {
+          "nodes": [
+            {
+              "id": "user_input",
+              "label": "用户输入",
+              "type": "input"
+            },
+            {
+              "id": "code_agent",
+              "label": "代码实操",
+              "type": "agent",
+              "agent": "code_agent"
+            },
+            {
+              "id": "integrate",
+              "label": "整合回复",
+              "type": "output"
+            }
+          ],
+          "edges": [
+            {
+              "source": "user_input",
+              "target": "code_agent"
+            },
+            {
+              "source": "code_agent",
+              "target": "integrate"
+            }
+          ]
+        },
+        "status_bar": [
+          {
+            "agent": "code_agent",
+            "status": "running",
+            "message": "代码实操 执行中..."
+          },
+          {
+            "agent": "code_agent",
+            "status": "completed",
+            "message": "代码实操 已完成"
+          }
+        ],
+        "latency_s": 11.87,
+        "error": ""
+      },
+      "intent": {
+        "recall": 1.0,
+        "precision": 1.0,
+        "f1": 1.0,
+        "missed": [],
+        "extra": []
+      },
+      "quality": {
+        "score": 1.0,
+        "structure": 1.0,
+        "length": 1.0,
+        "coverage": 1.0,
+        "llm_score": null
+      }
+    },
+    {
+      "meta": {
+        "scenario_id": "sim_user_001-s1",
+        "scenario": "综合学习",
+        "knowledge_point": "图",
+        "expected_agents": [
+          "document_agent",
+          "question_agent",
+          "multimodal_agent"
+        ],
+        "profile": {
+          "major": "信息管理",
+          "level": "高级",
+          "style": "实践型",
+          "goal": "考研"
+        },
+        "style": "实践型"
+      },
+      "result": {
+        "ok": true,
+        "reply": "好的！我来帮你梳理一下“图”这个知识点，并准备了一些练习。\n\n不过要说明一下，刚才在生成讲解文档和练习题时遇到了一点技术问题（系统线程出了点小状况），所以**文档和练习题的详细内容暂时没能成功生成**。不过别担心，我先把核心知识框架给你讲清楚，你可以先理解概念，等技术恢复后我再帮你生成完整的文档和题目。\n\n---\n\n## 📚 图的基础知识\n\n**图（Graph）** 是一种非线性数据结构，由**顶点（节点）**和**边**组成，用来表示多对多的关系。\n\n### 1. 图的分类\n- **有向图 vs 无向图**：边是否有方向\n- **带权图 vs 无权图**：边是否有权重（如距离、成本）\n- **连通图 vs 非连通图**：是否任意两点间都有路径\n\n### 2. 图的存储方式\n- **邻接矩阵**：二维数组，直观但空间开销大\n- **邻接表**：链表数组，节省空间，适合稀疏图\n\n### 3. 图的遍历\n- **深度优先搜索（DFS）**：一条路走到黑，再回头\n- **广度优先搜索（BFS）**：层层推进，像波纹扩散\n\n### 4. 经典算法\n- **最短路径**：Dijkstra（单源）、Floyd（多源）\n- **最小生成树**：Prim、Kruskal\n- **拓扑排序**：有向无环图（DAG）的线性排序\n\n---\n\n## 🧠 思维导图\n\n我已经为你生成了**图的知识框架思维导图**，点击右侧面板即可查看，能帮你快速梳理整体结构。\n\n---\n\n## 📝 练习建议\n\n虽然题目暂时没生成成功，但你可以先尝试思考这几个问题：\n\n1. 有 5 个顶点的无向完全图有多少条边？\n2. DFS 和 BFS 分别适合什么场景？\n3. 如何判断一个图是否有环？\n\n---\n\n## 🔜 下一步建议\n\n等技术恢复后，我可以为你：\n- 生成**详细的讲解文档**（含图示和代码示例）\n- 生成**配套练习题**（选择+简答，带解析）\n\n你现在想先深入哪个部分？比如**图的遍历**、**最短路径**，还是**最小生成树**？我可以先口头给你详细讲讲！😊\n\n有0道题答错了，还需要多练习。要我再讲解一下吗？",
+        "agent_calls": [
+          "document_agent",
+          "multimodal_agent",
+          "question_agent"
+        ],
+        "dag": {
+          "nodes": [
+            {
+              "id": "user_input",
+              "label": "用户输入",
+              "type": "input"
+            },
+            {
+              "id": "document_agent",
+              "label": "文档生成",
+              "type": "agent",
+              "agent": "document_agent"
+            },
+            {
+              "id": "multimodal_agent",
+              "label": "多模态资源",
+              "type": "agent",
+              "agent": "multimodal_agent"
+            },
+            {
+              "id": "question_agent",
+              "label": "题库生成",
+              "type": "agent",
+              "agent": "question_agent"
+            },
+            {
+              "id": "integrate",
+              "label": "整合回复",
+              "type": "output"
+            }
+          ],
+          "edges": [
+            {
+              "source": "user_input",
+              "target": "document_agent"
+            },
+            {
+              "source": "user_input",
+              "target": "multimodal_agent"
+            },
+            {
+              "source": "user_input",
+              "target": "question_agent"
+            },
+            {
+              "source": "document_agent",
+              "target": "integrate"
+            },
+            {
+              "source": "multimodal_agent",
+              "target": "integrate"
+            },
+            {
+              "source": "question_agent",
+              "target": "integrate"
+            }
+          ]
+        },
+        "status_bar": [
+          {
+            "agent": "document_agent",
+            "status": "running",
+            "message": "文档生成 执行中..."
+          },
+          {
+            "agent": "multimodal_agent",
+            "status": "running",
+            "message": "多模态资源 执行中..."
+          },
+          {
+            "agent": "question_agent",
+            "status": "running",
+            "message": "题库生成 执行中..."
+          },
+          {
+            "agent": "document_agent",
+            "status": "completed",
+            "message": "文档生成 已完成"
+          },
+          {
+            "agent": "multimodal_agent",
+            "status": "completed",
+            "message": "多模态资源 已完成"
+          },
+          {
+            "agent": "question_agent",
+            "status": "completed",
+            "message": "题库生成 已完成"
+          }
+        ],
+        "latency_s": 14.56,
+        "error": ""
+      },
+      "intent": {
+        "recall": 1.0,
+        "precision": 1.0,
+        "f1": 1.0,
+        "missed": [],
+        "extra": []
+      },
+      "quality": {
+        "score": 0.84,
+        "structure": 0.6,
+        "length": 1.0,
+        "coverage": 1.0,
+        "llm_score": null
+      }
+    },
+    {
+      "meta": {
+        "scenario_id": "sim_user_001-s2",
+        "scenario": "拓展阅读",
+        "knowledge_point": "快速排序",
+        "expected_agents": [
+          "reading_agent"
+        ],
+        "profile": {
+          "major": "信息管理",
+          "level": "高级",
+          "style": "实践型",
+          "goal": "考研"
+        },
+        "style": "实践型"
+      },
+      "result": {
+        "ok": true,
+        "reply": "关于快速排序，我给你整理了一份学习路径和资源推荐，帮你从入门到进阶都能找到合适的材料。\n\n---\n\n### 📚 推荐书籍\n\n- **《算法（第4版）》**（Robert Sedgewick 著）  \n  这本书对快速排序的讲解非常经典，包括基本实现、三向切分优化等，代码示例清晰，适合系统学习。\n\n- **《算法导论》**（CLRS）  \n  如果你想要更深入的理论分析（如期望时间复杂度证明），这一章是必读的，但篇幅较长，建议作为进阶参考。\n\n- **《编程珠玑》**（Jon Bentley）  \n  里面有快速排序的经典优化技巧和性能调优思路，适合想写出高效代码的同学。\n\n---\n\n### 🧩 建议学习路径\n\n1. **先掌握核心思想**：分治 + 分区（partition）\n2. **再理解优化点**：随机化基准值、三数取中、小数组切换插入排序\n3. **最后看应用**：快速排序在 `sort()` 函数中的实际实现（如 C++ STL 的 introsort）\n\n---\n\n### ⚠️ 小提示\n\n刚才我尝试为你生成一份**拓展阅读**的文档，但系统临时出了点小问题，没能成功生成。不过上面推荐的书籍和路径已经足够你起步了。\n\n---\n\n### 🚀 下一步建议\n\n如果你已经理解了快速排序的基本流程，可以接着看 **三向切分快速排序**（处理大量重复元素时效率极高），或者对比学习 **归并排序**，理解两者在时间复杂度和空间复杂度上的取舍。\n\n需要我帮你整理一份快速排序的**代码模板**或**图解步骤**吗？",
+        "agent_calls": [
+          "reading_agent"
+        ],
+        "dag": {
+          "nodes": [
+            {
+              "id": "user_input",
+              "label": "用户输入",
+              "type": "input"
+            },
+            {
+              "id": "reading_agent",
+              "label": "拓展阅读",
+              "type": "agent",
+              "agent": "reading_agent"
+            },
+            {
+              "id": "integrate",
+              "label": "整合回复",
+              "type": "output"
+            }
+          ],
+          "edges": [
+            {
+              "source": "user_input",
+              "target": "reading_agent"
+            },
+            {
+              "source": "reading_agent",
+              "target": "integrate"
+            }
+          ]
+        },
+        "status_bar": [
+          {
+            "agent": "reading_agent",
+            "status": "running",
+            "message": "拓展阅读 执行中..."
+          },
+          {
+            "agent": "reading_agent",
+            "status": "completed",
+            "message": "拓展阅读 已完成"
+          }
+        ],
+        "latency_s": 7.86,
+        "error": ""
+      },
+      "intent": {
+        "recall": 1.0,
+        "precision": 1.0,
+        "f1": 1.0,
+        "missed": [],
+        "extra": []
+      },
+      "quality": {
+        "score": 0.949,
+        "structure": 1.0,
+        "length": 0.83,
+        "coverage": 1.0,
+        "llm_score": null
+      }
+    },
+    {
+      "meta": {
+        "scenario_id": "sim_user_002-s0",
+        "scenario": "学习规划",
+        "knowledge_point": "二叉树",
+        "expected_agents": [
+          "path_agent",
+          "profile_agent"
+        ],
+        "profile": {
+          "major": "软件工程",
+          "level": "高级",
+          "style": "视觉型",
+          "goal": "兴趣学习"
+        },
+        "style": "视觉型"
+      },
+      "result": {
+        "ok": true,
+        "reply": "好的！看到你想系统学习二叉树，这个方向选得很棒，它是数据结构和算法里非常核心的一块基石。我这就为你规划一条循序渐进的学习路径，并生成了一份详细的学习地图，**点击右侧面板查看你的专属路径**。\n\n考虑到你是兴趣驱动学习，这份路径的设计会**更注重理解原理和趣味性**，而不是枯燥的应试。整体分为四个阶段：\n\n1.  **🌱 基础入门**：从树的定义、基本术语（节点、度、深度）开始，先搞懂二叉树长什么样，以及它和普通树的区别。\n2.  **🔧 核心遍历**：这是重中之重。你会学到**前序、中序、后序**以及**层序**遍历，并理解它们背后的递归与迭代思想。这部分是后续所有操作的基础。\n3.  **⚙️ 进阶应用**：掌握遍历后，我们会深入探讨**二叉搜索树（BST）**、**平衡二叉树**等特殊形态，并动手实现插入、删除、查找等操作。\n4.  **🚀 实战演练**：最后，结合经典算法题（如最近公共祖先、路径总和等），带你将知识转化为解决实际问题的能力。\n\n建议你每天保持1-2小时的学习节奏，多动手画图模拟树的变换过程，**理解远胜于死记硬背**。\n\n关于下一步，当你掌握了二叉树的遍历和基本操作后，强烈推荐你接着学习**堆（优先队列）**和**图论基础**，它们与二叉树的思想一脉相承，会让你的知识网络更完整。\n\n如果在学习过程中卡住了，随时可以回来问我，我们一起拆解难题。祝你学习愉快！",
+        "agent_calls": [
+          "profile_agent",
+          "path_agent"
+        ],
+        "dag": {
+          "nodes": [
+            {
+              "id": "user_input",
+              "label": "用户输入",
+              "type": "input"
+            },
+            {
+              "id": "profile_agent",
+              "label": "画像构建",
+              "type": "agent",
+              "agent": "profile_agent"
+            },
+            {
+              "id": "path_agent",
+              "label": "路径规划",
+              "type": "agent",
+              "agent": "path_agent"
+            },
+            {
+              "id": "integrate",
+              "label": "整合回复",
+              "type": "output"
+            }
+          ],
+          "edges": [
+            {
+              "source": "user_input",
+              "target": "profile_agent"
+            },
+            {
+              "source": "profile_agent",
+              "target": "path_agent"
+            },
+            {
+              "source": "profile_agent",
+              "target": "integrate"
+            },
+            {
+              "source": "path_agent",
+              "target": "integrate"
+            }
+          ]
+        },
+        "status_bar": [
+          {
+            "agent": "profile_agent",
+            "status": "running",
+            "message": "画像构建 执行中..."
+          },
+          {
+            "agent": "profile_agent",
+            "status": "completed",
+            "message": "画像构建 已完成"
+          },
+          {
+            "agent": "path_agent",
+            "status": "running",
+            "message": "路径规划 执行中..."
+          },
+          {
+            "agent": "path_agent",
+            "status": "completed",
+            "message": "路径规划 已完成"
+          }
+        ],
+        "latency_s": 12.11,
+        "error": ""
+      },
+      "intent": {
+        "recall": 1.0,
+        "precision": 1.0,
+        "f1": 1.0,
+        "missed": [],
+        "extra": []
+      },
+      "quality": {
+        "score": 0.645,
+        "structure": 0.3,
+        "length": 0.749,
+        "coverage": 1.0,
+        "llm_score": null
+      }
+    },
+    {
+      "meta": {
+        "scenario_id": "sim_user_002-s1",
+        "scenario": "深度答疑",
+        "knowledge_point": "快速排序",
+        "expected_agents": [
+          "tutor_agent"
+        ],
+        "profile": {
+          "major": "软件工程",
+          "level": "高级",
+          "style": "视觉型",
+          "goal": "兴趣学习"
+        },
+        "style": "视觉型"
+      },
+      "result": {
+        "ok": true,
+        "reply": "好的，快速排序的原理确实值得好好理解，它不仅仅是“快”，更是一种非常优雅的**分治**思想。\n\n我为你梳理了它的核心逻辑，并生成了配套的讲解文档和思维导图，**点击右侧面板即可查看**，配合下面的文字说明，应该能帮你彻底想通。\n\n---\n\n### 核心思想：分而治之\n\n快速排序的“快”，源于它不直接排序，而是**不断把大问题拆成小问题**。\n\n**1. 选一个“基准”（Pivot）**\n从数组中随便挑一个数（通常是第一个或最后一个）作为“裁判”。\n\n**2. 分区（Partition）**\n遍历整个数组，把**所有比基准小的数**放到它左边，**所有比基准大的数**放到它右边。这一步结束后，基准数就找到了它在最终排序结果中的**正确位置**——它左边的数都比它小，右边的数都比它大。\n\n**3. 递归处理左右两边**\n现在，基准数不用再动了。我们只需要对**左边部分**和**右边部分**分别重复上述步骤（再选基准、再分区）。当子数组只剩下0个或1个元素时，排序自然完成。\n\n---\n\n### 为什么这样设计很巧妙？\n\n- **每次分区都“固定”一个元素**：无论数组多乱，一次分区后，至少有一个数（基准）的位置是绝对正确的。\n- **问题规模指数级缩小**：每次分区后，问题被分成两半（虽然可能不相等），递归的深度大约是 \\( \\log_2 n \\)，所以平均时间复杂度是 **O(n log n)**，非常高效。\n- **原地排序**：它不像归并排序需要额外的大块内存，只需在数组内部交换元素，节省空间。\n\n---\n\n### 一个直观的比喻\n\n想象你在整理一副乱序的扑克牌：\n1. 抽一张牌（比如“7”）作为基准。\n2. 把小于7的牌全放左边，大于7的牌全放右边。\n3. 现在“7”的位置固定了。\n4. 再对左边（小于7的牌堆）和右边（大于7的牌堆）分别重复这个过程。\n\n---\n\n### 下一步学习建议\n\n如果你已经理解了分治思想，我强烈建议你**亲手实现一遍**，并尝试回答这两个问题：\n1. 如果数组**已经有序**，快速排序会怎样？（提示：这会导致最坏情况 O(n²)，所以有“随机选基准”的优化）\n2. 为什么**从右往左**找小、**从左往右**找大的交换顺序不能乱？\n\n如果你在实现或理解上还有卡壳的地方，随时告诉我，我们可以针对具体的代码细节继续讨论。",
+        "agent_calls": [
+          "tutor_agent",
+          "document_agent",
+          "multimodal_agent"
+        ],
+        "dag": {
+          "nodes": [
+            {
+              "id": "user_input",
+              "label": "用户输入",
+              "type": "input"
+            },
+            {
+              "id": "tutor_agent",
+              "label": "智能辅导",
+              "type": "agent",
+              "agent": "tutor_agent"
+            },
+            {
+              "id": "document_agent",
+              "label": "文档生成",
+              "type": "agent",
+              "agent": "document_agent"
+            },
+            {
+              "id": "multimodal_agent",
+              "label": "多模态资源",
+              "type": "agent",
+              "agent": "multimodal_agent"
+            },
+            {
+              "id": "integrate",
+              "label": "整合回复",
+              "type": "output"
+            }
+          ],
+          "edges": [
+            {
+              "source": "user_input",
+              "target": "tutor_agent"
+            },
+            {
+              "source": "user_input",
+              "target": "document_agent"
+            },
+            {
+              "source": "user_input",
+              "target": "multimodal_agent"
+            },
+            {
+              "source": "tutor_agent",
+              "target": "integrate"
+            },
+            {
+              "source": "document_agent",
+              "target": "integrate"
+            },
+            {
+              "source": "multimodal_agent",
+              "target": "integrate"
+            }
+          ]
+        },
+        "status_bar": [
+          {
+            "agent": "tutor_agent",
+            "status": "running",
+            "message": "智能辅导 执行中..."
+          },
+          {
+            "agent": "document_agent",
+            "status": "running",
+            "message": "文档生成 执行中..."
+          },
+          {
+            "agent": "multimodal_agent",
+            "status": "running",
+            "message": "多模态资源 执行中..."
+          },
+          {
+            "agent": "tutor_agent",
+            "status": "completed",
+            "message": "智能辅导 已完成"
+          },
+          {
+            "agent": "document_agent",
+            "status": "completed",
+            "message": "文档生成 已完成"
+          },
+          {
+            "agent": "multimodal_agent",
+            "status": "completed",
+            "message": "多模态资源 已完成"
+          }
+        ],
+        "latency_s": 16.8,
+        "error": ""
+      },
+      "intent": {
+        "recall": 1.0,
+        "precision": 0.333,
+        "f1": 0.5,
+        "missed": [],
+        "extra": [
+          "document_agent",
+          "multimodal_agent"
+        ]
+      },
+      "quality": {
+        "score": 0.84,
+        "structure": 0.6,
+        "length": 1.0,
+        "coverage": 1.0,
+        "llm_score": null
+      }
+    },
+    {
+      "meta": {
+        "scenario_id": "sim_user_002-s2",
+        "scenario": "拓展阅读",
+        "knowledge_point": "快速排序",
+        "expected_agents": [
+          "reading_agent"
+        ],
+        "profile": {
+          "major": "软件工程",
+          "level": "高级",
+          "style": "视觉型",
+          "goal": "兴趣学习"
+        },
+        "style": "视觉型"
+      },
+      "result": {
+        "ok": true,
+        "reply": "关于快速排序，除了课本上的基础内容，确实有不少值得深入阅读的资料。我已经为你整理了一份**拓展阅读材料**，点击右侧面板即可查看。\n\n这里先给你一些**选书和阅读的建议**：\n\n- **入门巩固**：如果你觉得课本上的递归和分治思想还不够直观，推荐先看**《算法图解》**（Aditya Bhargava 著）。这本书用大量漫画和例子讲透了快速排序的分区思想，非常适合新手建立直觉。\n- **进阶提升**：如果想了解快速排序在工程中是如何被优化和应用的，**《算法》（第4版，Robert Sedgewick 著）** 是绕不开的经典。书里详细讲了三向切分、为什么实际中它比归并排序更快等深度内容。\n- **面试实战**：如果你是为了准备面试，**《剑指 Offer》** 中关于排序的题目和变种（如快速选择算法）很有参考价值，能帮你把快排思想迁移到解决“第K大元素”等问题上。\n\n**下一步学习建议**：掌握快排后，建议你对比学习**归并排序**和**堆排序**，思考它们各自的优缺点和适用场景。这对理解算法设计的“分治”和“数据结构”两大核心非常有帮助。\n\n如果你在阅读中遇到具体问题，或者想聊聊快排的某种变体（比如随机化快排），随时可以再问我！",
+        "agent_calls": [
+          "reading_agent"
+        ],
+        "dag": {
+          "nodes": [
+            {
+              "id": "user_input",
+              "label": "用户输入",
+              "type": "input"
+            },
+            {
+              "id": "reading_agent",
+              "label": "拓展阅读",
+              "type": "agent",
+              "agent": "reading_agent"
+            },
+            {
+              "id": "integrate",
+              "label": "整合回复",
+              "type": "output"
+            }
+          ],
+          "edges": [
+            {
+              "source": "user_input",
+              "target": "reading_agent"
+            },
+            {
+              "source": "reading_agent",
+              "target": "integrate"
+            }
+          ]
+        },
+        "status_bar": [
+          {
+            "agent": "reading_agent",
+            "status": "running",
+            "message": "拓展阅读 执行中..."
+          },
+          {
+            "agent": "reading_agent",
+            "status": "completed",
+            "message": "拓展阅读 已完成"
+          }
+        ],
+        "latency_s": 7.69,
+        "error": ""
+      },
+      "intent": {
+        "recall": 1.0,
+        "precision": 1.0,
+        "f1": 1.0,
+        "missed": [],
+        "extra": []
+      },
+      "quality": {
+        "score": 0.617,
+        "structure": 0.3,
+        "length": 0.656,
+        "coverage": 1.0,
+        "llm_score": null
+      }
+    },
+    {
+      "meta": {
+        "scenario_id": "sim_user_003-s0",
+        "scenario": "代码实操",
+        "knowledge_point": "图",
+        "expected_agents": [
+          "code_agent"
+        ],
+        "profile": {
+          "major": "信息管理",
+          "level": "高级",
+          "style": "视觉型",
+          "goal": "面试算法"
+        },
+        "style": "视觉型"
+      },
+      "result": {
+        "ok": true,
+        "reply": "好的！我来帮你生成一个可运行的图（Graph）代码示例。不过刚才在生成代码模板时遇到了一点技术问题，我先为你手动整理一个完整可运行的示例。\n\n---\n\n## 📘 图（Graph）基础示例\n\n下面是一个用 **Python + NetworkX** 实现图的创建、遍历和可视化的完整代码：\n\n```python\nimport networkx as nx\nimport matplotlib.pyplot as plt\n\n# 1. 创建一个无向图\nG = nx.Graph()\n\n# 2. 添加节点\nG.add_nodes_from([1, 2, 3, 4, 5])\n\n# 3. 添加边（连接关系）\nG.add_edges_from([(1, 2), (1, 3), (2, 4), (3, 5), (4, 5)])\n\n# 4. 查看基本信息\nprint(\"节点数:\", G.number_of_nodes())\nprint(\"边数:\", G.number_of_edges())\nprint(\"所有节点:\", list(G.nodes()))\nprint(\"所有边:\", list(G.edges()))\n\n# 5. 遍历 - 深度优先搜索(DFS)\nprint(\"\\n深度优先遍历(从节点1开始):\", list(nx.dfs_preorder_nodes(G, source=1)))\n\n# 6. 遍历 - 广度优先搜索(BFS)\nprint(\"广度优先遍历(从节点1开始):\", list(nx.bfs_tree(G, source=1).nodes()))\n\n# 7. 可视化\nplt.figure(figsize=(6, 4))\nnx.draw(G, with_labels=True, node_color='lightblue', \n        node_size=800, font_size=15, font_weight='bold')\nplt.title(\"简单无向图\")\nplt.show()\n```\n\n---\n\n## 📦 运行前需要安装的库\n\n在终端执行以下命令安装依赖：\n\n```bash\npip install networkx matplotlib\n```\n\n---\n\n## 🔍 代码说明\n\n| 部分 | 作用 |\n|------|------|\n| `Graph()` | 创建无向图（想用有向图就改成 `DiGraph()`） |\n| `add_nodes_from` / `add_edges_from` | 批量添加节点和边 |\n| `dfs_preorder_nodes` | 深度优先遍历 |\n| `bfs_tree` | 广度优先遍历 |\n| `nx.draw` | 可视化图形 |\n\n---\n\n## 🚀 下一步建议\n\n如果你对图算法感兴趣，可以继续学习：\n- **最短路径**（Dijkstra / Floyd）\n- **最小生成树**（Kruskal / Prim）\n- **拓扑排序**（针对有向无环图）\n\n需要我帮你生成这些算法的示例代码吗？或者你想先试试运行这个基础版本？",
+        "agent_calls": [
+          "code_agent"
+        ],
+        "dag": {
+          "nodes": [
+            {
+              "id": "user_input",
+              "label": "用户输入",
+              "type": "input"
+            },
+            {
+              "id": "code_agent",
+              "label": "代码实操",
+              "type": "agent",
+              "agent": "code_agent"
+            },
+            {
+              "id": "integrate",
+              "label": "整合回复",
+              "type": "output"
+            }
+          ],
+          "edges": [
+            {
+              "source": "user_input",
+              "target": "code_agent"
+            },
+            {
+              "source": "code_agent",
+              "target": "integrate"
+            }
+          ]
+        },
+        "status_bar": [
+          {
+            "agent": "code_agent",
+            "status": "running",
+            "message": "代码实操 执行中..."
+          },
+          {
+            "agent": "code_agent",
+            "status": "completed",
+            "message": "代码实操 已完成"
+          }
+        ],
+        "latency_s": 9.16,
+        "error": ""
+      },
+      "intent": {
+        "recall": 1.0,
+        "precision": 1.0,
+        "f1": 1.0,
+        "missed": [],
+        "extra": []
+      },
+      "quality": {
+        "score": 1.0,
+        "structure": 1.0,
+        "length": 1.0,
+        "coverage": 1.0,
+        "llm_score": null
+      }
+    },
+    {
+      "meta": {
+        "scenario_id": "sim_user_003-s1",
+        "scenario": "学习评估",
+        "knowledge_point": "链表",
+        "expected_agents": [
+          "assessment_agent"
+        ],
+        "profile": {
+          "major": "信息管理",
+          "level": "高级",
+          "style": "视觉型",
+          "goal": "面试算法"
+        },
+        "style": "视觉型"
+      },
+      "result": {
+        "ok": true,
+        "reply": "好的，我刚刚尝试为你生成一份链表学习效果的评估报告，但系统在生成过程中遇到了一点技术问题，暂时没能成功产出报告内容。\n\n不过别担心，我可以先和你聊聊链表这个知识点，帮你梳理一下思路。你可以先告诉我：\n\n1. **你目前学到哪个阶段了？** 比如刚接触链表概念、已经会写基本操作（增删改查）、还是正在刷相关算法题？\n2. **你觉得自己在哪些方面比较有把握？** 比如理解指针/节点结构、还是实现反转链表这类操作？\n3. **有没有遇到特别卡壳的地方？** 比如循环链表的边界条件、还是递归写法？\n\n这样我可以更有针对性地帮你分析学习情况。同时，我也可以为你推荐一些链表的经典练习题，帮你检验一下掌握程度。\n\n等你回复后，我可以再尝试为你生成一份详细的评估报告，点击右侧面板就能查看。你先说说看？",
+        "agent_calls": [
+          "assessment_agent"
+        ],
+        "dag": {
+          "nodes": [
+            {
+              "id": "user_input",
+              "label": "用户输入",
+              "type": "input"
+            },
+            {
+              "id": "assessment_agent",
+              "label": "学习评估",
+              "type": "agent",
+              "agent": "assessment_agent"
+            },
+            {
+              "id": "integrate",
+              "label": "整合回复",
+              "type": "output"
+            }
+          ],
+          "edges": [
+            {
+              "source": "user_input",
+              "target": "assessment_agent"
+            },
+            {
+              "source": "assessment_agent",
+              "target": "integrate"
+            }
+          ]
+        },
+        "status_bar": [
+          {
+            "agent": "assessment_agent",
+            "status": "running",
+            "message": "学习评估 执行中..."
+          },
+          {
+            "agent": "assessment_agent",
+            "status": "completed",
+            "message": "学习评估 已完成"
+          }
+        ],
+        "latency_s": 11.43,
+        "error": ""
+      },
+      "intent": {
+        "recall": 1.0,
+        "precision": 1.0,
+        "f1": 1.0,
+        "missed": [],
+        "extra": []
+      },
+      "quality": {
+        "score": 0.55,
+        "structure": 0.3,
+        "length": 0.434,
+        "coverage": 1.0,
+        "llm_score": null
+      }
+    },
+    {
+      "meta": {
+        "scenario_id": "sim_user_003-s2",
+        "scenario": "讲解知识",
+        "knowledge_point": "图",
+        "expected_agents": [
+          "document_agent",
+          "multimodal_agent"
+        ],
+        "profile": {
+          "major": "信息管理",
+          "level": "高级",
+          "style": "视觉型",
+          "goal": "面试算法"
+        },
+        "style": "视觉型"
+      },
+      "result": {
+        "ok": true,
+        "reply": "好的！图（Graph）这个概念确实很抽象，但它在计算机科学和日常生活中无处不在。别担心，我用一个简单的类比和清晰的图示来帮你理解。\n\n---\n\n## 🎯 核心类比：图 = 社交网络\n\n想象一下你的微信好友列表：\n\n- **每个人** 就是一个 **节点（Vertex/Node）**\n- **好友关系** 就是 **边（Edge）**\n\n```\n  小明 —— 小红\n   |  \\    |\n   |   \\   |\n  小刚 —— 小丽\n```\n\n在这个图里：\n- 小明、小红、小刚、小丽是 **节点**\n- 他们之间的连线是 **边**\n- 如果小明和小红是好友，就有一条边连接他们\n\n---\n\n## 📊 图的正式定义\n\n> **图** 是由 **节点（V）** 和 **边（E）** 组成的数学结构，记作 **G = (V, E)**\n\n### 两种基本类型：\n\n| 类型 | 特点 | 例子 |\n|------|------|------|\n| **无向图** | 边没有方向，A-B 和 B-A 一样 | 微信好友关系 |\n| **有向图** | 边有方向，A→B 和 B→A 不同 | 微博关注关系（你关注了A，A不一定关注你）|\n\n---\n\n## 🧠 思维导图已生成，点击右侧面板查看\n\n我已经为你生成了一张思维导图，它把图的定义、类型、应用场景都梳理清楚了。建议先看思维导图建立整体框架，再回来继续看下面的内容。\n\n---\n\n## 🌍 生活中的图\n\n图无处不在：\n\n- **地图导航**：城市是节点，道路是边（有向图）\n- **网页链接**：网页是节点，超链接是边（有向图）\n- **电路图**：元件是节点，导线是边\n- **家族树**：成员是节点，亲子关系是边\n\n---\n\n## 🎮 一个直观的例子\n\n假设你在玩一个游戏，地图上有4个地点：\n\n```\n  城堡 —— 森林\n   |        |\n   |        |\n  村庄 —— 湖泊\n```\n\n- 你在 **村庄**，想去 **城堡**\n- 路径1：村庄 → 城堡（直达）\n- 路径2：村庄 → 湖泊 → 森林 → 城堡（绕路）\n\n这就是图在路径规划中的应用！\n\n---\n\n## 📚 下一步学习建议\n\n理解了基本概念后，我建议按这个顺序学习：\n\n1. **图的存储方式**（邻接矩阵 vs 邻接表）\n2. **图的遍历**（深度优先DFS和广度优先BFS）\n3. **最短路径算法**（Dijkstra算法）\n\n---\n\n**📄 讲解文档已生成，点击右侧面板查看**\n\n里面包含了更详细的定义、代码示例和练习题。你先看看思维导图和文档，有任何疑问随时问我！比如：\n\n- 图的存储方式有什么区别？\n- 怎么判断一个图是连通的？\n- 图的最短路径怎么找？\n\n你想先从哪个方面深入？",
+        "agent_calls": [
+          "document_agent",
+          "multimodal_agent"
+        ],
+        "dag": {
+          "nodes": [
+            {
+              "id": "user_input",
+              "label": "用户输入",
+              "type": "input"
+            },
+            {
+              "id": "document_agent",
+              "label": "文档生成",
+              "type": "agent",
+              "agent": "document_agent"
+            },
+            {
+              "id": "multimodal_agent",
+              "label": "多模态资源",
+              "type": "agent",
+              "agent": "multimodal_agent"
+            },
+            {
+              "id": "integrate",
+              "label": "整合回复",
+              "type": "output"
+            }
+          ],
+          "edges": [
+            {
+              "source": "user_input",
+              "target": "document_agent"
+            },
+            {
+              "source": "user_input",
+              "target": "multimodal_agent"
+            },
+            {
+              "source": "document_agent",
+              "target": "integrate"
+            },
+            {
+              "source": "multimodal_agent",
+              "target": "integrate"
+            }
+          ]
+        },
+        "status_bar": [
+          {
+            "agent": "document_agent",
+            "status": "running",
+            "message": "文档生成 执行中..."
+          },
+          {
+            "agent": "multimodal_agent",
+            "status": "running",
+            "message": "多模态资源 执行中..."
+          },
+          {
+            "agent": "document_agent",
+            "status": "completed",
+            "message": "文档生成 已完成"
+          },
+          {
+            "agent": "multimodal_agent",
+            "status": "completed",
+            "message": "多模态资源 已完成"
+          }
+        ],
+        "latency_s": 10.55,
+        "error": ""
+      },
+      "intent": {
+        "recall": 1.0,
+        "precision": 1.0,
+        "f1": 1.0,
+        "missed": [],
+        "extra": []
+      },
+      "quality": {
+        "score": 1.0,
+        "structure": 1.0,
+        "length": 1.0,
+        "coverage": 1.0,
+        "llm_score": null
+      }
+    }
+  ],
+  "config": {
+    "num_users": 4,
+    "concurrency": 2,
+    "api_base": "http://localhost:8001"
+  }
+}

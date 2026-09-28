@@ -1,0 +1,79 @@
+# ══════════════════════════════════════════════════════════
+# AI 智学系统 · Git 忽略规则
+# 原则：只提交源码与文档；依赖、产物、密钥、数据、日志一律不入库
+# ══════════════════════════════════════════════════════════
+
+# ── 环境变量与密钥（严禁提交；请参考各目录 .env.example 自行填写）──
+.env
+.env.*
+!.env.example
+!.env.example.*
+!.env.*.example
+
+# ── Node 依赖与构建产物 ──
+node_modules/
+dist/
+dist-ssr/
+.vite/
+*.local
+
+# ── Python 依赖与缓存 ──
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# ── 本地数据库（运行时生成）──
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+
+# ── 向量库与嵌入模型（体积大，构建/首次运行时自动下载）──
+ai-tutor/data/chroma_db/
+chroma_db/
+chroma_model/
+models/
+*.onnx
+*.bin
+*.pkl
+*.pt
+*.safetensors
+
+# ── 生成媒体（视频由服务运行时产出）──
+*.mp4
+*.gif
+ai-tutor/data/videos/
+
+# ── 日志 ──
+*.log
+logs/
+logs_*
+simulation/output/server.log
+
+# ── 临时与归档文件 ──
+tmp/
+.tmp_*
+*.zip
+*.tar.gz
+
+# ── 内部资料（不外发：面试准备、内部复盘等）──
+面试项目分析回答稿.md
+
+# ── Agent 工作区配置（本地记忆与技能，非项目代码）──
+.workbuddy/
+
+# ── IDE / 编辑器 ──
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ── 操作系统 ──
+.DS_Store
+Thumbs.db
+desktop.ini

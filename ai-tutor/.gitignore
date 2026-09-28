@@ -1,0 +1,20 @@
+.env
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+data/chroma_db/
+*.mp4
+*.gif
+.idea/
+.vscode/
+*.log
+.pytest_cache/
+
+# ChromaDB 模型文件（Dockerfile 构建时从 hf-mirror.com 下载，不进 git）
+chroma_model/
+*.tar.gz

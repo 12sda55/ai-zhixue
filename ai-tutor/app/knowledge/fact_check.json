@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "description": "数据结构核心事实校验表 - 50-80条高频易错规则",
+    "source": "教材基础 + 算法导论 + 严蔚敏数据结构",
+    "version": "1.0",
+    "total_facts": 68
+  },
+  "facts": [
+    {"id": "F001", "knowledge_point": "array", "fact": "数组支持O(1)随机访问", "severity": "critical"},
+    {"id": "F002", "knowledge_point": "array", "fact": "数组插入/删除时间复杂度为O(n)", "severity": "critical"},
+    {"id": "F003", "knowledge_point": "array", "fact": "数组在内存中连续存储", "severity": "critical"},
+
+    {"id": "F004", "knowledge_point": "linked_list", "fact": "链表不支持随机访问，查找需要O(n)", "severity": "critical"},
+    {"id": "F005", "knowledge_point": "linked_list", "fact": "链表插入/删除为O(1)（已知位置）", "severity": "critical"},
+    {"id": "F006", "knowledge_point": "linked_list", "fact": "链表不需要连续内存空间", "severity": "important"},
+
+    {"id": "F007", "knowledge_point": "stack", "fact": "栈是后进先出(LIFO)结构", "severity": "critical"},
+    {"id": "F008", "knowledge_point": "stack", "fact": "栈的push和pop操作均为O(1)", "severity": "critical"},
+    {"id": "F009", "knowledge_point": "stack", "fact": "栈可以用数组或链表实现", "severity": "important"},
+
+    {"id": "F010", "knowledge_point": "queue", "fact": "队列是先进先出(FIFO)结构", "severity": "critical"},
+    {"id": "F011", "knowledge_point": "queue", "fact": "队列的enqueue和dequeue均为O(1)", "severity": "critical"},
+    {"id": "F012", "knowledge_point": "queue", "fact": "循环队列需要区分空和满的条件", "severity": "important"},
+
+    {"id": "F013", "knowledge_point": "hash_table", "fact": "哈希表查找/插入/删除平均O(1)", "severity": "critical"},
+    {"id": "F014", "knowledge_point": "hash_table", "fact": "哈希冲突解决方法有拉链法和开放寻址法", "severity": "critical"},
+    {"id": "F015", "knowledge_point": "hash_table", "fact": "哈希表最坏情况退化为O(n)", "severity": "important"},
+
+    {"id": "F016", "knowledge_point": "binary_tree", "fact": "二叉树的三种遍历：前序(根左右)、中序(左根右)、后序(左右根)", "severity": "critical"},
+    {"id": "F017", "knowledge_point": "binary_tree", "fact": "满二叉树节点数=2^h-1", "severity": "important"},
+    {"id": "F018", "knowledge_point": "binary_tree", "fact": "完全二叉树适合用数组存储", "severity": "important"},
+
+    {"id": "F019", "knowledge_point": "bst", "fact": "BST中序遍历得到递增序列", "severity": "critical"},
+    {"id": "F020", "knowledge_point": "bst", "fact": "BST查找/插入/删除的平均时间复杂度为O(log n)", "severity": "critical"},
+    {"id": "F021", "knowledge_point": "bst", "fact": "BST最坏情况退化为链表，时间复杂度O(n)", "severity": "critical"},
+    {"id": "F022", "knowledge_point": "bst", "fact": "BST删除双子节点时用右子树最小值或左子树最大值替代", "severity": "important"},
+
+    {"id": "F023", "knowledge_point": "avl", "fact": "AVL树是平衡因子不超过1的BST", "severity": "critical"},
+    {"id": "F024", "knowledge_point": "avl", "fact": "AVL树插入/删除需要旋转维持平衡", "severity": "critical"},
+    {"id": "F025", "knowledge_point": "avl", "fact": "AVL树有四种旋转：LL、RR、LR、RL", "severity": "important"},
+    {"id": "F026", "knowledge_point": "avl", "fact": "AVL树查找/插入/删除均为O(log n)", "severity": "critical"},
+
+    {"id": "F027", "knowledge_point": "heap", "fact": "堆是完全二叉树", "severity": "critical"},
+    {"id": "F028", "knowledge_point": "heap", "fact": "大顶堆：父节点>=子节点；小顶堆：父节点<=子节点", "severity": "critical"},
+    {"id": "F029", "knowledge_point": "heap", "fact": "堆的插入和删除均为O(log n)", "severity": "critical"},
+    {"id": "F030", "knowledge_point": "heap", "fact": "堆排序是不稳定的排序算法", "severity": "important"},
+
+    {"id": "F031", "knowledge_point": "bubble_sort", "fact": "冒泡排序平均时间复杂度O(n^2)", "severity": "critical"},
+    {"id": "F032", "knowledge_point": "bubble_sort", "fact": "冒泡排序是稳定排序", "severity": "critical"},
+    {"id": "F033", "knowledge_point": "bubble_sort", "fact": "优化后的冒泡排序最好情况O(n)", "severity": "important"},
+
+    {"id": "F034", "knowledge_point": "quick_sort", "fact": "快速排序平均时间复杂度O(n log n)", "severity": "critical"},
+    {"id": "F035", "knowledge_point": "quick_sort", "fact": "快速排序最坏时间复杂度O(n^2)", "severity": "critical"},
+    {"id": "F036", "knowledge_point": "quick_sort", "fact": "快速排序是不稳定排序", "severity": "critical"},
+    {"id": "F037", "knowledge_point": "quick_sort", "fact": "快速排序是分治算法", "severity": "important"},
+
+    {"id": "F038", "knowledge_point": "merge_sort", "fact": "归并排序时间复杂度O(n log n)（所有情况）", "severity": "critical"},
+    {"id": "F039", "knowledge_point": "merge_sort", "fact": "归并排序是稳定排序", "severity": "critical"},
+    {"id": "F040", "knowledge_point": "merge_sort", "fact": "归并排序需要O(n)额外空间", "severity": "critical"},
+    {"id": "F041", "knowledge_point": "merge_sort", "fact": "归并排序是分治算法", "severity": "important"},
+
+    {"id": "F042", "knowledge_point": "binary_search", "fact": "二分查找时间复杂度O(log n)", "severity": "critical"},
+    {"id": "F043", "knowledge_point": "binary_search", "fact": "二分查找要求数据有序且支持随机访问", "severity": "critical"},
+    {"id": "F044", "knowledge_point": "binary_search", "fact": "二分查找的mid计算要用 left+(right-left)//2 防止溢出", "severity": "important"},
+
+    {"id": "F045", "knowledge_point": "recursion", "fact": "递归必须有基线条件(终止条件)", "severity": "critical"},
+    {"id": "F046", "knowledge_point": "recursion", "fact": "递归过深会导致栈溢出", "severity": "critical"},
+    {"id": "F047", "knowledge_point": "recursion", "fact": "尾递归可以被编译器优化为迭代", "severity": "important"},
+
+    {"id": "F048", "knowledge_point": "graph_basics", "fact": "图的两种存储方式：邻接矩阵和邻接表", "severity": "critical"},
+    {"id": "F049", "knowledge_point": "graph_basics", "fact": "DFS用栈(递归实现)，BFS用队列", "severity": "critical"},
+    {"id": "F050", "knowledge_point": "graph_basics", "fact": "邻接矩阵空间O(V^2)，邻接表空间O(V+E)", "severity": "important"},
+
+    {"id": "F051", "knowledge_point": "graph_traversal", "fact": "BFS求无权图最短路径，DFS常用于拓扑排序和连通分量", "severity": "important"},
+    {"id": "F052", "knowledge_point": "graph_traversal", "fact": "BFS和DFS的时间复杂度均为O(V+E)", "severity": "critical"},
+
+    {"id": "F053", "knowledge_point": "dynamic_programming", "fact": "DP的两个要素：最优子结构和重叠子问题", "severity": "critical"},
+    {"id": "F054", "knowledge_point": "dynamic_programming", "fact": "DP分为自顶向下(记忆化)和自底向上(递推)", "severity": "important"},
+    {"id": "F055", "knowledge_point": "dynamic_programming", "fact": "斐波那契朴素递归O(2^n)，DP优化后O(n)", "severity": "critical"},
+
+    {"id": "F056", "knowledge_point": "red_black_tree", "fact": "红黑树的5条性质：根黑、叶黑、红节点子黑、黑高相等、节点非红即黑", "severity": "critical"},
+    {"id": "F057", "knowledge_point": "red_black_tree", "fact": "红黑树插入最多2次旋转，删除最多3次旋转", "severity": "important"},
+
+    {"id": "F058", "knowledge_point": "huffman_tree", "fact": "哈夫曼树是带权路径长度最小的二叉树", "severity": "critical"},
+    {"id": "F059", "knowledge_point": "huffman_tree", "fact": "哈夫曼编码是前缀编码", "severity": "important"},
+
+    {"id": "F060", "knowledge_point": "counting_sort", "fact": "计数排序时间复杂度O(n+k)，k为数据范围", "severity": "critical"},
+    {"id": "F061", "knowledge_point": "counting_sort", "fact": "计数排序是稳定排序（逆序填放）", "severity": "important"},
+    {"id": "F062", "knowledge_point": "counting_sort", "fact": "计数排序不是比较排序，适用于整数且范围不大", "severity": "important"},
+
+    {"id": "F063", "knowledge_point": "shell_sort", "fact": "希尔排序是插入排序的改进，用增量序列分组", "severity": "important"},
+    {"id": "F064", "knowledge_point": "shell_sort", "fact": "希尔排序是不稳定排序", "severity": "critical"},
+
+    {"id": "F065", "knowledge_point": "topological_sort", "fact": "拓扑排序只适用于DAG（有向无环图）", "severity": "critical"},
+    {"id": "F066", "knowledge_point": "topological_sort", "fact": "拓扑排序可以用Kahn算法(BFS)或DFS实现", "severity": "important"},
+
+    {"id": "F067", "knowledge_point": "shortest_path", "fact": "Dijkstra算法不能处理负权边", "severity": "critical"},
+    {"id": "F068", "knowledge_point": "shortest_path", "fact": "Floyd-Warshall算法时间复杂度O(V^3)", "severity": "critical"}
+  ]
+}

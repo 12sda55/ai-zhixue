@@ -1,0 +1,83 @@
+{
+    "rules": {
+        "answer_correct": {
+            "delta": 0.08,
+            "description": "答题正确 → 知识基础 +delta×难度系数"
+        },
+        "answer_wrong": {
+            "delta": 0.12,
+            "error_count_threshold": 2,
+            "description": "答题错误 → 知识基础 -delta×难度系数，累计N次加入薄弱"
+        },
+        "consecutive_correct": {
+            "delta": 0.15,
+            "threshold": 3,
+            "description": "连续正确N题 → +delta，标记巩固，从薄弱移除，可提升难度"
+        },
+        "consecutive_wrong": {
+            "delta": 0.2,
+            "threshold": 2,
+            "description": "连续错误N题 → -delta，立即加入薄弱，可降低难度"
+        },
+        "self_report_weak": {
+            "delta": 0.1,
+            "description": "自述薄弱 → -delta，立即加入薄弱"
+        },
+        "self_report_mastered": {
+            "mastery_set": 0.7,
+            "description": "自述已掌握 → 设为指定值（需验证）"
+        },
+        "express_confusion": {
+            "delta": 0.1,
+            "confusion_count_threshold": 2,
+            "description": "表达困惑 → -delta，累计N次加入薄弱"
+        },
+        "forgetting_decay": {
+            "days_threshold": 7,
+            "decay_rate": 0.05,
+            "description": "N天未复习 → 知识基础 -(decay_rate×100)%"
+        },
+        "code_pass_quick": {
+            "delta": 0.12,
+            "max_iterations": 2,
+            "description": "1-N次迭代通过 → +delta"
+        },
+        "code_pass_slow": {
+            "delta": 0.03,
+            "min_iterations": 6,
+            "description": "N+次迭代通过 → +delta，疑似薄弱"
+        },
+        "code_performance_deviation": {
+            "delta": 0.1,
+            "description": "性能偏离理论值 → -delta，加入薄弱"
+        }
+    },
+    "difficulty_multiplier": {
+        "basic": 0.8,
+        "intermediate": 1.0,
+        "advanced": 1.2
+    },
+    "difficulty_multiplier_wrong": {
+        "basic": 1.2,
+        "intermediate": 1.0,
+        "advanced": 0.8
+    },
+    "priority": {
+        "self_report": 3,
+        "behavior": 2,
+        "implicit": 1
+    },
+    "event_priority": {
+        "self_report_weak": 3,
+        "self_report_mastered": 3,
+        "express_confusion": 2,
+        "answer_correct": 2,
+        "answer_wrong": 2,
+        "consecutive_correct_3": 2,
+        "consecutive_wrong_2": 2,
+        "code_pass_1_2_iterations": 2,
+        "code_pass_6_plus_iterations": 1,
+        "code_performance_deviation": 1,
+        "forgetting_curve_decay": 1
+    }
+}
